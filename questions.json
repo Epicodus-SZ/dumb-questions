@@ -1,24 +1,30 @@
 { "questions": [{
     "dummy": "Donald Trump",
     "question": "Who knew healthcare was so complex?",
-    "text": "It hurts my head."
+    "text": "It hurts my head.",
+    "timestamp": "7/18/2017"
   },{
     "dummy": "Smeagol",
     "question": "Where is precious?",
-    "text": "Urge to kill rising"
+    "text": "Urge to kill rising",
+    "timestamp": "7/19/2017"
   },{
     "dummy": "Walter Palmer",
     "question": "Why is everyone so angry?",
-    "text": "It was for the best...trust me."
+    "text": "It was for the best...trust me.",
+    "timestamp": "7/20/2017"
   }],
   "answers": [{
     "dummy": "Barney Grumble",
-    "answer": "Bbbbbbuuuurpp!"
+    "answer": "Bbbbbbuuuurpp!",
+    "timestamp": "8/1/2017"
   },{
     "dummy": "Tony Stark",
-    "answer": "With great power comes great responsibility"
+    "answer": "With great power comes great responsibility",
+    "timestamp": "8/2/2017"
   },{
     "dummy": "Douglas Adams",
-    "answer": "43"
+    "answer": "43",
+    "timestamp": "8/10/2017"
   }]
 }

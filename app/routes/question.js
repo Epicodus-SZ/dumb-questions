@@ -6,7 +6,6 @@ export default Ember.Route.extend({
   },
   actions: {
     createA(params) {
-      debugger;
       var newA = this.store.createRecord('answer', params);
       var newQ = params.question;
       newQ.get('answers').addObject(newA);
@@ -16,16 +15,13 @@ export default Ember.Route.extend({
       this.transitionTo('question');
     }, //end of createComment action
     deleteQ(question) {
-      console.log("got it!");
-      // if (confirm('Are you sure you want to delete this question?')) {
-      //   var comment_deletions = question.get('comments').map(function(comment) {
-      //     return comment.destroyRecord();
-      //   });
-      //   Ember.RSVP.all(comment_deletions).then(function() {
-      //     return question.destroyRecord();
-      //   });
-      //   this.transitionTo('index');
-      // } //end of if
+      var deleteAnswers = question.get('answers').map(function(answer) {
+        return answer.destroyRecord();
+      });
+      Ember.RSVP.all(deleteAnswers).then(function() {
+        return question.destroyRecord();
+      });
+      this.transitionTo('index');
     } //end of delete
   } //end of actions
 });

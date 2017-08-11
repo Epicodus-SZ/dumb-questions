@@ -12,7 +12,9 @@ export default Ember.Component.extend({
       timestamp: dateString,
       question: this.get('question')
     };
-    console.log(this);
+    //Clear the form
+    this.set('dummy', '');
+    this.set('answer', '');
     this.sendAction('createA', params);
   } //end of createComment action
 } //end of actions

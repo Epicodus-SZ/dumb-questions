@@ -3,7 +3,6 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   actions: {
   createQuestion() {
-    debugger;
     var date = new Date();
     var dMonth = date.getMonth()+1;
     var dateString = dMonth+'/'+date.getDate()+'/'+date.getFullYear();
@@ -13,10 +12,11 @@ export default Ember.Component.extend({
       text: this.get('text'),
       timestamp: dateString,
     };
+    //Clear the form
+    this.set('dummy', '');
+    this.set('question', '');
+    this.set('text', '');
     this.sendAction('createQuestion2', params);
-    // var newQ = this.store.createRecord('question', params);
-    // newQ.save();
-    // this.transitionTo('index', {reload: true});
   }
 }
 });

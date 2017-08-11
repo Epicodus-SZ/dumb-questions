@@ -1,2 +1,16 @@
 <hr>
-<button {{action 'delete' question}}>Delete</button>
+{{#bs-modal open=confirmDelModal onHidden=(action (mut confirmDelModal) false) as |modal|}}
+  {{#modal.header}}
+    <h4 class="modal-title">
+      Confirm Delete
+    </h4>
+  {{/modal.header}}
+  {{#modal.body}}
+    Are you sure you want to delete this question?
+  {{/modal.body}}
+  {{#modal.footer}}
+    {{#bs-button onClick=(action modal.close)}}Cancel{{/bs-button}}
+    {{#bs-button onClick=(action "delete" question) type="danger"}}Delete{{/bs-button}}
+  {{/modal.footer}}
+{{/bs-modal}}
+{{#bs-button type="danger" onClick=(action (mut confirmDelModal) true)}}Delete{{/bs-button}}

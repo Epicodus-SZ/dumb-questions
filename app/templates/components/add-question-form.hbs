@@ -1,0 +1,34 @@
+<!-- add a question form -->
+<div class="col-lg-8">
+  <div class="well bs-component">
+    <form class="form-horizontal" {{action 'createQuestion' on="submit"}}>
+      <fieldset>
+        <legend>Add your dumb question to the list...</legend>
+        <div class="form-group">
+          <label for="question" class="col-lg-2 control-label">Question</label>
+          <div class="col-lg-10">
+            {{input type="text" class="form-control" id="question" value=question placeholder="Dumb question"}}
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="dummy" class="col-lg-2 control-label">Author</label>
+          <div class="col-lg-5">
+            {{input type="text" id="dummy" class="form-control" value=dummy placeholder="Name of dummy"}}
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="text" class="col-lg-2 control-label">Misc Info</label>
+          <div class="col-lg-10">
+            {{textarea rows="3" class="form-control" id="text" value=text placeholder="Extra dumb stuff"}}
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-2">
+            <button class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+<!--end of question form -->

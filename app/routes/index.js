@@ -7,5 +7,13 @@ export default Ember.Route.extend({
         return results.sortBy('timestamp'); }),
       answers: this.store.findAll('answer')
     });
+  },
+  actions: {
+  createQuestion2(params) {
+    debugger;
+    var newQ = this.store.createRecord('question', params);
+    newQ.save();
+    //this.transitionTo('index');
   }
+}
 });

@@ -1,24 +1,17 @@
 # dumb-questions
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
-
-## Prerequisites
-
-You will need the following things properly installed on your computer.
-
-
+A website that shows questions, and allows you to answer them.  Written in JavaScript.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone https://github.com/Epicodus-SZ/dumb-questions` this repository
 * `cd dumb-questions`
 * `npm install`
 
 ## Running / Development
 
 * `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+* then browse to [http://localhost:4200](http://localhost:4200).
 
 ## Planning
 

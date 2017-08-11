@@ -1,4 +1,58 @@
 <hr>
+{{#bs-button type="primary" onClick=(action (mut updateModal) true)}}Update{{/bs-button}}
+{{#bs-button type="danger" onClick=(action (mut confirmDelModal) true)}}Delete{{/bs-button}}
+
+
+
+
+<!-- Hidden update modal dialog -->
+{{#bs-modal open=updateModal onHidden=(action (mut updateModal) false) as |modal|}}
+  {{#modal.header}}
+    <h4 class="modal-title">
+      Update Question
+    </h4>
+  {{/modal.header}}
+  {{#modal.body}}
+
+  <!-- add a question form -->
+  <div class="col-lg-8">
+    <div class="well bs-component">
+      <form class="form-horizontal">
+        <fieldset>
+          <div class="form-group">
+            <label for="upquestion" class="col-lg-2 control-label">Question</label>
+            <div class="col-lg-10">
+              {{input type="text" class="form-control" id="upquestion" value=question.question placeholder="Dumb question"}}
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="updummy" class="col-lg-2 control-label">Author</label>
+            <div class="col-lg-5">
+              {{input type="text" id="updummy" class="form-control" value=question.dummy placeholder="Name of dummy"}}
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="uptext" class="col-lg-2 control-label">Context</label>
+            <div class="col-lg-10">
+              {{textarea rows="3" class="form-control" id="uptext" value=question.text placeholder="Extra context"}}
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  <!--end of question form -->
+
+  {{/modal.body}}
+  {{#modal.footer}}
+    {{#bs-button onClick=(action "close" question)}}Cancel{{/bs-button}}
+    {{#bs-button onClick=(action "update" question) type="primary"}}Update{{/bs-button}}
+  {{/modal.footer}}
+{{/bs-modal}}
+
+
+
+<!-- Hidden delete confrimation modal dialog -->
 {{#bs-modal open=confirmDelModal onHidden=(action (mut confirmDelModal) false) as |modal|}}
   {{#modal.header}}
     <h4 class="modal-title">
@@ -13,4 +67,3 @@
     {{#bs-button onClick=(action "delete" question) type="danger"}}Delete{{/bs-button}}
   {{/modal.footer}}
 {{/bs-modal}}
-{{#bs-button type="danger" onClick=(action (mut confirmDelModal) true)}}Delete{{/bs-button}}

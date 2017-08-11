@@ -2,9 +2,19 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(params) {
-    return this.store.findRecord('question', params.question_id);
+    return this.store.findRecord('question', params.question_id, { reload: true });
   },
   actions: {
+    refresh(question){
+      debugger;
+      //transition.abort();
+      //var reload = this.store.findRecord('question', question.id, { reload: true });
+      //this.transitionToRoute('question', reload.id);
+    },
+    update(question) {
+      question.save();
+      this.refresh();
+    },
     createA(params) {
       var newA = this.store.createRecord('answer', params);
       var newQ = params.question;

@@ -5,8 +5,12 @@ export default Ember.Component.extend({
     submit(){
       console.log("you pressed submit");
     },
-    close(){
-      console.log("you pressed close");
+    close(question){
+      debugger;
+      this.set('updateModal', false);
+      this.sendAction('refresh', question);
+
+      //this.set('dummy',question.dummy);
     },
     confirmDelete(){
       this.set('confirmModal', true);
@@ -15,8 +19,9 @@ export default Ember.Component.extend({
       this.set('confirmDelModal', false); //hide the modal
       this.sendAction('deleteQ', question);
     }, //end of delete
-    updatePost(question) {
-      this.sendAction('gotoUpdate', question);
+    update(question) {
+      this.set('updateModal', false); //hide the modal
+      this.sendAction('update', question);
     }
   } //end of actions
 });

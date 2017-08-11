@@ -1,0 +1,24 @@
+{ "questions": [{
+    "dummy": "Donald Trump",
+    "question": "Who knew healthcare was so complex?",
+    "text": "It hurts my head."
+  },{
+    "dummy": "Smeagol",
+    "question": "Where is precious?",
+    "text": "Urge to kill rising"
+  },{
+    "dummy": "Walter Palmer",
+    "question": "Why is everyone so angry?",
+    "text": "It was for the best...trust me."
+  }],
+  "answers": [{
+    "dummy": "Barney Grumble",
+    "answer": "Bbbbbbuuuurpp!"
+  },{
+    "dummy": "Tony Stark",
+    "answer": "With great power comes great responsibility"
+  },{
+    "dummy": "Douglas Adams",
+    "answer": "43"
+  }]
+}
